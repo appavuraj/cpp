@@ -27,6 +27,4 @@ jobs:
         run: |
             docker build -t cpp_image:0.1 ./
             docker-compose up
-            docker container ls -a | grep docker-compose
-            docker image rm -f cpp_image:0.1
             
