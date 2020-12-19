@@ -27,5 +27,5 @@ jobs:
         run: |
             docker build -t cpp_image:0.1 ./
             docker-compose up
-            docker container ls -a
+            docker container logs learning_cpp_test-docker-compose_1
             
