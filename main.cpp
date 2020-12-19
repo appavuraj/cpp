@@ -1,6 +1,6 @@
 #include <iostream>
 
 int main () {
-    std::cout << "Hello Cpp World!" << std::endl;
+    std::cout << "Sample CPP test!" << std::endl;
     return 0;
 }
