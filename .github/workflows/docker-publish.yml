@@ -18,7 +18,7 @@ jobs:
   # Run tests.
   # See also https://docs.docker.com/docker-hub/builds/automated-testing/
   test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v2
@@ -27,4 +27,6 @@ jobs:
         run: |
             docker build -t cpp_image:0.1 ./
             docker-compose up
-            docker container logs learning_cpp_test-docker-compose_1
+            docker container logs cpp_test-docker-compose_1
+            docker container rm -f cpp_test-docker-compose_1
+            docker image rm -f cpp_image:0.1
