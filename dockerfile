@@ -11,5 +11,11 @@ COPY . /usr/src/test
 #Set Workdir
 WORKDIR /usr/src/test
 
-#Execution of the Python hello-world
-CMD ["g++", "-Wall", "-std=c++17", "main.cpp", "-o", "main"]
+#Perform CPP Buildroutine
+RUN ["g++", "-Wall", "-std=c++17", "main.cpp", "-o", "main"]
+
+#Workaround to copy the binary to a dictory
+COPY main /usr/sr/test/
+
+#After successful build try to run final ouput
+CMD ["/usr/src/test/main"]
