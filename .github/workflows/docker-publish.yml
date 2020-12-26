@@ -25,8 +25,4 @@ jobs:
 
       - name: Run tests
         run: |
-            docker build -t cpp_image:0.1 ./
             docker-compose up
-            docker container logs cpp_test-docker-compose_1
-            docker container rm -f cpp_test-docker-compose_1
-            docker image rm -f cpp_image:0.1
