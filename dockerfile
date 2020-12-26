@@ -11,5 +11,9 @@ COPY . /usr/src/test
 #Set Workdir
 WORKDIR /usr/src/test
 
-#Execution of the Python hello-world
-CMD ["g++", "-Wall", "-std=c++17", "main.cpp", "-o", "main"]
+#Perform CPP Buildroutine.
+#!NOTE : For Binary file has to be placed in a folder since docker fails with binary without directory!
+RUN ["g++", "-Wall", "-std=c++17", "main.cpp", "-o", "/usr/src/test/main"]
+
+#After successful build try to run final ouput
+CMD ["/usr/src/test/main"]
