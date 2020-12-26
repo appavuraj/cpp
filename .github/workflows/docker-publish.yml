@@ -26,4 +26,5 @@ jobs:
       - name: Run tests
         run: |
             docker-compose up
+            docker image rm -f cpp_cpp-test
             docker-compose down
