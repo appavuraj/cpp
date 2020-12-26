@@ -11,11 +11,9 @@ COPY . /usr/src/test
 #Set Workdir
 WORKDIR /usr/src/test
 
-#Perform CPP Buildroutine
-RUN ["g++", "-Wall", "-std=c++17", "main.cpp", "-o", "main"]
-
-#Workaround to copy the binary to a dictory
-COPY main /usr/sr/test/
+#Perform CPP Buildroutine.
+#!NOTE : For Binary file has to be placed in a folder since docker fails with binary without directory!
+RUN ["g++", "-Wall", "-std=c++17", "main.cpp", "-o", "/usr/src/test/main"]
 
 #After successful build try to run final ouput
 CMD ["/usr/src/test/main"]
